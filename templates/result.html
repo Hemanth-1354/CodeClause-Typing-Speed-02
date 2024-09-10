@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Test Results</h1>
+        
+        <p><strong>Total Time Taken:</strong> {{ total_time|round(2) }} seconds</p>
+        <p><strong>Typing Speed:</strong> {{ wpm|round(2) }} WPM</p>
+        <p><strong>Accuracy:</strong> {{ accuracy|round(2) }}%</p>
+
+        <a href="/" class="btn">Try Again</a>
+    </div>
+</body>
+</html>

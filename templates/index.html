@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+  }
+  
+  .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+      text-align: center;
+      color: #333;
+  }
+  
+  textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+  }
+  
+  button {
+      width: 100%;
+      padding: 10px;
+      background-color: #5cb85c;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+  }
+  
+  button:hover {
+      background-color: #4cae4c;
+  }
+  
+  blockquote {
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+  }
+  
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Calculator</h1>
+        <p>Type the following sentence as fast and as accurately as you can:</p>
+        <blockquote>{{ sample_text }}</blockquote>
+
+        <form action="/result" method="post">
+            <textarea name="user_input" rows="4" placeholder="Start typing here..."></textarea>
+            <input type="hidden" name="start_time" id="start_time">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('start_time').value = Date.now() / 1000; // Record the start time
+    </script>
+</body>
+</html>
